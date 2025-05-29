@@ -2,8 +2,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/localSlam.dir/src/lidarOdom.cpp.o"
   "CMakeFiles/localSlam.dir/src/localSlam.cpp.o"
   "CMakeFiles/localSlam.dir/src/mapOptimiser.cpp.o"
+  "liblocalSlam.a"
   "liblocalSlam.pdb"
-  "liblocalSlam.so"
 )
 
 # Per-language clean rules from dependency scanning.

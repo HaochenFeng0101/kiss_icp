@@ -27,7 +27,6 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
   "DISABLE_PNG"
   "SOPHUS_USE_BASIC_LOGGING=1"
   "SPDLOG_COMPILED_LIB"
-  "localSlam_EXPORTS"
   "qh_QHpointer"
   "vtkRenderingContext2D_AUTOINIT=1(vtkRenderingContextOpenGL2)"
   "vtkRenderingCore_AUTOINIT=3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)"

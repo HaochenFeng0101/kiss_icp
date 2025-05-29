@@ -83,7 +83,8 @@ bool initialize()
         _points_threshold,
         _search_height,
         _lidar_height);
-
+        
+        
     return true;
 }
 
@@ -106,6 +107,7 @@ void poseCallback(const geometry_msgs::PoseStamped::ConstPtr &msg)
     point_ros.y = _current_world_transform.translation().y();
     point_ros.z = _current_world_transform.translation().z();
     ros_pose->push_back(point_ros);
+    
     // pcl::io::savePCDFileBinaryCompressed("/home/haochen/dconstruct/dash_robot/build/dash_code/pointcloud_utils/localSlam/test/map/pose_ros.pcd", *ros_pose);
 }
 
@@ -122,7 +124,7 @@ void cloudCallback(const sensor_msgs::PointCloud2::ConstPtr &msg)
     
 }
 
-void Tick()
+void Tick(const ros::Publisher& pub_path_pcd,const ros::Publisher& pub_map, const ros::Publisher& pub_overgrowth )
 {
     if (last_lidar_timestamp != updated_lidar_timestamp)
     {
@@ -141,16 +143,16 @@ void Tick()
             // spdlog::info("recorded world transform!!!");
             spdlog::info("new slam");
             
-        
+            
         }
         
 
         Eigen::Affine3f current_local_pose = Eigen::Affine3f::Identity();
-
+        
         current_local_pose.matrix() = _localSlam.getCurrentPose();
         // check where need to flip pose
         if (lidar_flip)
-        {
+        {   
             _lidar_flip_mat.matrix() << -1, 0, 0, 0,
                 0, -1, 0, 0,
                 0, 0, 1, 0,
@@ -179,6 +181,7 @@ void Tick()
             lidar_extrinsic.linear() = rotation;
             //times lidar extrinsic
             current_local_pose = lidar_extrinsic * current_local_pose;
+    
         }
     
         
@@ -226,13 +229,25 @@ void Tick()
             std::string filename_pose = "/home/haochen/dconstruct/kiss_icp/result_folder/pose_data.pcd";
             pcl::io::savePCDFileBinaryCompressed(filename_pose, *pose_list);
 
+            //publish to topic
+            sensor_msgs::PointCloud2 output_msg_path;
+            pcl::toROSMsg(*pose_list,output_msg_path );
+            output_msg_path.header.frame_id = "map"; 
+            output_msg_path.header.stamp = ros::Time::now();
+            pub_path_pcd.publish(output_msg_path);
+
             // Get current map and transform to world frame
             pcl::PointCloud<pcl::PointXYZ>::Ptr local_map = _localSlam.getLocalMap();
             // pcl::transformPointCloud(*local_map, *local_map, current_global_transform);
             // pcl::io::savePCDFileBinaryCompressed("/home/haochen/dconstruct/dash_robot/build/dash_code/pointcloud_utils/localSlam/test/map/localmap" + std::to_string(updated_lidar_timestamp) + ".pcd", *local_map);
 
+
             // update local map
             _overgrowth_ptr->updateMap(local_map);
+            sensor_msgs::PointCloud2 output_msg_map;
+            pcl::toROSMsg(*local_map, output_msg_map);
+            output_msg_map.header.frame_id = "map";
+            pub_map.publish(output_msg_map);
 
             // get box center and added to tree data
             for (const auto &[timestamp, pose] : _localSlam.get_timestamped_poses())
@@ -286,12 +301,18 @@ int main(int argc, char **argv)
 
     ros::Subscriber cloud_sub = nh.subscribe("/dc/lidar/main/xyzirt/sensor_frame", 10, cloudCallback);
     ros::Subscriber pose_sub = nh.subscribe("/dc/loc/pose", 10, poseCallback);
+
+    ros::Publisher pub_path_pcd = nh.advertise<sensor_msgs::PointCloud2>("local_slam/pose_pcd", 1);
+    ros::Publisher pub_map = nh.advertise<sensor_msgs::PointCloud2>("local_slam/pub_map", 1);
+    ros::Publisher pub_overgrowth = nh.advertise<sensor_msgs::PointCloud2>("local_slam/overgrowth", 1);
+
     spdlog::info("Starting ROS node, please play rosbag file...");
+ 
 
     while (ros::ok())
     {
         ros::spinOnce();
-        Tick();
+        Tick(pub_path_pcd,pub_map,pub_overgrowth);
     }
 
     return 0;
