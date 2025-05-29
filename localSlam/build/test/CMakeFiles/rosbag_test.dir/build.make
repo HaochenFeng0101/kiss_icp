@@ -79,7 +79,7 @@ rosbag_test_EXTERNAL_OBJECTS =
 
 test/rosbag_test: test/CMakeFiles/rosbag_test.dir/main.cpp.o
 test/rosbag_test: test/CMakeFiles/rosbag_test.dir/build.make
-test/rosbag_test: liblocalSlam.a
+test/rosbag_test: liblocalSlam.so
 test/rosbag_test: /usr/lib/x86_64-linux-gnu/libspdlog.so.1.5.0
 test/rosbag_test: /opt/ros/noetic/lib/librosbag.so
 test/rosbag_test: /opt/ros/noetic/lib/librosbag_storage.so
@@ -253,19 +253,8 @@ test/rosbag_test: /usr/lib/x86_64-linux-gnu/libvtkIOXMLParser-7.1.so.7.1p.1
 test/rosbag_test: kiss_icp/pipeline/libpipeline.a
 test/rosbag_test: kiss_icp/core/libcore.a
 test/rosbag_test: /usr/lib/x86_64-linux-gnu/libtbb.so.2
-test/rosbag_test: kiss_icp/metrics/libmetrics.a
 test/rosbag_test: /usr/lib/gcc/x86_64-linux-gnu/9/libgomp.so
-test/rosbag_test: /usr/local/lib/libgtsam.so.4.2.0
-test/rosbag_test: /usr/lib/x86_64-linux-gnu/libboost_serialization.so.1.71.0
-test/rosbag_test: /usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0
-test/rosbag_test: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.71.0
-test/rosbag_test: /usr/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0
-test/rosbag_test: /usr/lib/x86_64-linux-gnu/libboost_atomic.so.1.71.0
-test/rosbag_test: /usr/lib/x86_64-linux-gnu/libboost_date_time.so.1.71.0
-test/rosbag_test: /usr/lib/x86_64-linux-gnu/libboost_regex.so.1.71.0
-test/rosbag_test: /usr/lib/x86_64-linux-gnu/libboost_timer.so.1.71.0
-test/rosbag_test: /usr/lib/x86_64-linux-gnu/libboost_chrono.so.1.71.0
-test/rosbag_test: /usr/local/lib/libmetis-gtsam.so
+test/rosbag_test: kiss_icp/metrics/libmetrics.a
 test/rosbag_test: /usr/lib/x86_64-linux-gnu/libpthread.so
 test/rosbag_test: /usr/lib/x86_64-linux-gnu/libopencv_highgui.so.4.2.0
 test/rosbag_test: /usr/lib/x86_64-linux-gnu/libopencv_datasets.so.4.2.0

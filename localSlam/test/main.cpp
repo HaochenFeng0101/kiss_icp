@@ -117,6 +117,9 @@ void cloudCallback(const sensor_msgs::PointCloud2::ConstPtr &msg)
 
     last_lidar_timestamp = msg->header.stamp.toNSec();
     pcl::copyPointCloud(*cloud, *latest_cloud);
+    // pcl::io::savePCDFileBinaryCompressed()
+    
+    
 }
 
 void Tick()
@@ -136,6 +139,9 @@ void Tick()
             current_global_transform = _current_world_transform;
             isnew_slam = false;
             // spdlog::info("recorded world transform!!!");
+            spdlog::info("new slam");
+            
+        
         }
         
 
