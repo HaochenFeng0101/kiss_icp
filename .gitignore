@@ -1,3 +1,4 @@
 # .gitignore
 /result_folder
-/localSlam/build
+localSlam/build
+localSlam/.cache
