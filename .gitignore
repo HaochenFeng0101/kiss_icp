@@ -1,5 +1,5 @@
 # .gitignore
 /result_folder
-localSlam/build
-localSlam/.cache
-build
+/localSlam/build
+/localSlam/.cache
+/build
