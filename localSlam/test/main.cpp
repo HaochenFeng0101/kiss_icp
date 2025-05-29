@@ -314,6 +314,7 @@ int main(int argc, char **argv)
     while (ros::ok())
     {
         ros::spinOnce();
+        //pass publiser in
         Tick(pub_path_pcd,pub_map,pub_overgrowth);
     }
 
