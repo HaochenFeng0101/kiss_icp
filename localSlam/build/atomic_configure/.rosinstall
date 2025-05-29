@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/haochen/dconstruct/kiss_icp/localSlam/build/devel/setup.sh

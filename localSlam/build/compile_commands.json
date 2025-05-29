@@ -1,0 +1,37 @@
+[
+{
+  "directory": "/home/haochen/dconstruct/kiss_icp/localSlam/build/kiss_icp/core",
+  "command": "/usr/bin/c++  -DSOPHUS_USE_BASIC_LOGGING=1 -Dqh_QHpointer -DvtkRenderingContext2D_AUTOINIT=\"1(vtkRenderingContextOpenGL2)\" -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/usr/include/vtk-7.1 -I/usr/include/freetype2 -I/home/haochen/dconstruct/kiss_icp/kiss_icp/core -I/home/haochen/dconstruct/kiss_icp -I/home/haochen/dconstruct/kiss_icp/localSlam/build/_deps/tessil-src/include -I/home/haochen/dconstruct/kiss_icp/localSlam/build/_deps/sophus-src -isystem /usr/include/eigen3    -fPIC   -fdiagnostics-color=always -w -ffast-math -fopenmp -std=gnu++17 -o CMakeFiles/core.dir/Registration.cpp.o -c /home/haochen/dconstruct/kiss_icp/kiss_icp/core/Registration.cpp",
+  "file": "/home/haochen/dconstruct/kiss_icp/kiss_icp/core/Registration.cpp"
+},
+{
+  "directory": "/home/haochen/dconstruct/kiss_icp/localSlam/build/kiss_icp/core",
+  "command": "/usr/bin/c++  -DSOPHUS_USE_BASIC_LOGGING=1 -Dqh_QHpointer -DvtkRenderingContext2D_AUTOINIT=\"1(vtkRenderingContextOpenGL2)\" -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/usr/include/vtk-7.1 -I/usr/include/freetype2 -I/home/haochen/dconstruct/kiss_icp/kiss_icp/core -I/home/haochen/dconstruct/kiss_icp -I/home/haochen/dconstruct/kiss_icp/localSlam/build/_deps/tessil-src/include -I/home/haochen/dconstruct/kiss_icp/localSlam/build/_deps/sophus-src -isystem /usr/include/eigen3    -fPIC   -fdiagnostics-color=always -w -ffast-math -fopenmp -std=gnu++17 -o CMakeFiles/core.dir/Deskew.cpp.o -c /home/haochen/dconstruct/kiss_icp/kiss_icp/core/Deskew.cpp",
+  "file": "/home/haochen/dconstruct/kiss_icp/kiss_icp/core/Deskew.cpp"
+},
+{
+  "directory": "/home/haochen/dconstruct/kiss_icp/localSlam/build/kiss_icp/core",
+  "command": "/usr/bin/c++  -DSOPHUS_USE_BASIC_LOGGING=1 -Dqh_QHpointer -DvtkRenderingContext2D_AUTOINIT=\"1(vtkRenderingContextOpenGL2)\" -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/usr/include/vtk-7.1 -I/usr/include/freetype2 -I/home/haochen/dconstruct/kiss_icp/kiss_icp/core -I/home/haochen/dconstruct/kiss_icp -I/home/haochen/dconstruct/kiss_icp/localSlam/build/_deps/tessil-src/include -I/home/haochen/dconstruct/kiss_icp/localSlam/build/_deps/sophus-src -isystem /usr/include/eigen3    -fPIC   -fdiagnostics-color=always -w -ffast-math -fopenmp -std=gnu++17 -o CMakeFiles/core.dir/Preprocessing.cpp.o -c /home/haochen/dconstruct/kiss_icp/kiss_icp/core/Preprocessing.cpp",
+  "file": "/home/haochen/dconstruct/kiss_icp/kiss_icp/core/Preprocessing.cpp"
+},
+{
+  "directory": "/home/haochen/dconstruct/kiss_icp/localSlam/build/kiss_icp/core",
+  "command": "/usr/bin/c++  -DSOPHUS_USE_BASIC_LOGGING=1 -Dqh_QHpointer -DvtkRenderingContext2D_AUTOINIT=\"1(vtkRenderingContextOpenGL2)\" -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/usr/include/vtk-7.1 -I/usr/include/freetype2 -I/home/haochen/dconstruct/kiss_icp/kiss_icp/core -I/home/haochen/dconstruct/kiss_icp -I/home/haochen/dconstruct/kiss_icp/localSlam/build/_deps/tessil-src/include -I/home/haochen/dconstruct/kiss_icp/localSlam/build/_deps/sophus-src -isystem /usr/include/eigen3    -fPIC   -fdiagnostics-color=always -w -ffast-math -fopenmp -std=gnu++17 -o CMakeFiles/core.dir/Threshold.cpp.o -c /home/haochen/dconstruct/kiss_icp/kiss_icp/core/Threshold.cpp",
+  "file": "/home/haochen/dconstruct/kiss_icp/kiss_icp/core/Threshold.cpp"
+},
+{
+  "directory": "/home/haochen/dconstruct/kiss_icp/localSlam/build/kiss_icp/core",
+  "command": "/usr/bin/c++  -DSOPHUS_USE_BASIC_LOGGING=1 -Dqh_QHpointer -DvtkRenderingContext2D_AUTOINIT=\"1(vtkRenderingContextOpenGL2)\" -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/usr/include/vtk-7.1 -I/usr/include/freetype2 -I/home/haochen/dconstruct/kiss_icp/kiss_icp/core -I/home/haochen/dconstruct/kiss_icp -I/home/haochen/dconstruct/kiss_icp/localSlam/build/_deps/tessil-src/include -I/home/haochen/dconstruct/kiss_icp/localSlam/build/_deps/sophus-src -isystem /usr/include/eigen3    -fPIC   -fdiagnostics-color=always -w -ffast-math -fopenmp -std=gnu++17 -o CMakeFiles/core.dir/VoxelHashAndAlign.cpp.o -c /home/haochen/dconstruct/kiss_icp/kiss_icp/core/VoxelHashAndAlign.cpp",
+  "file": "/home/haochen/dconstruct/kiss_icp/kiss_icp/core/VoxelHashAndAlign.cpp"
+},
+{
+  "directory": "/home/haochen/dconstruct/kiss_icp/localSlam/build/kiss_icp/metrics",
+  "command": "/usr/bin/c++  -Dqh_QHpointer -DvtkRenderingContext2D_AUTOINIT=\"1(vtkRenderingContextOpenGL2)\" -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/usr/include/vtk-7.1 -I/usr/include/freetype2 -I/home/haochen/dconstruct/kiss_icp/kiss_icp/metrics -I/home/haochen/dconstruct/kiss_icp -isystem /usr/include/eigen3    -fPIC   -fdiagnostics-color=always -w -std=gnu++17 -o CMakeFiles/metrics.dir/Metrics.cpp.o -c /home/haochen/dconstruct/kiss_icp/kiss_icp/metrics/Metrics.cpp",
+  "file": "/home/haochen/dconstruct/kiss_icp/kiss_icp/metrics/Metrics.cpp"
+},
+{
+  "directory": "/home/haochen/dconstruct/kiss_icp/localSlam/build/kiss_icp/pipeline",
+  "command": "/usr/bin/c++  -DSOPHUS_USE_BASIC_LOGGING=1 -Dqh_QHpointer -DvtkRenderingContext2D_AUTOINIT=\"1(vtkRenderingContextOpenGL2)\" -DvtkRenderingCore_AUTOINIT=\"3(vtkInteractionStyle,vtkRenderingFreeType,vtkRenderingOpenGL2)\" -I/usr/include/vtk-7.1 -I/usr/include/freetype2 -I/home/haochen/dconstruct/kiss_icp/kiss_icp/pipeline -I/home/haochen/dconstruct/kiss_icp -I/home/haochen/dconstruct/kiss_icp/localSlam/build/_deps/tessil-src/include -I/home/haochen/dconstruct/kiss_icp/localSlam/build/_deps/sophus-src -isystem /usr/include/eigen3    -fPIC   -fdiagnostics-color=always -w -fopenmp -std=gnu++17 -o CMakeFiles/pipeline.dir/KissICP.cpp.o -c /home/haochen/dconstruct/kiss_icp/kiss_icp/pipeline/KissICP.cpp",
+  "file": "/home/haochen/dconstruct/kiss_icp/kiss_icp/pipeline/KissICP.cpp"
+}
+]

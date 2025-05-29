@@ -1,0 +1,2 @@
+/usr/bin/ar qc liblocalSlam.a  CMakeFiles/localSlam.dir/src/localSlam.cpp.o CMakeFiles/localSlam.dir/src/lidarOdom.cpp.o CMakeFiles/localSlam.dir/src/mapOptimiser.cpp.o
+/usr/bin/ranlib liblocalSlam.a

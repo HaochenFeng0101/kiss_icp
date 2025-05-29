@@ -106,7 +106,7 @@ void poseCallback(const geometry_msgs::PoseStamped::ConstPtr &msg)
     point_ros.y = _current_world_transform.translation().y();
     point_ros.z = _current_world_transform.translation().z();
     ros_pose->push_back(point_ros);
-    pcl::io::savePCDFileBinaryCompressed("/home/haochen/dconstruct/dash_robot/build/dash_code/pointcloud_utils/localSlam/test/map/pose_ros.pcd", *ros_pose);
+    // pcl::io::savePCDFileBinaryCompressed("/home/haochen/dconstruct/dash_robot/build/dash_code/pointcloud_utils/localSlam/test/map/pose_ros.pcd", *ros_pose);
 }
 
 void cloudCallback(const sensor_msgs::PointCloud2::ConstPtr &msg)
@@ -196,7 +196,7 @@ void Tick()
                 _localSlam.save_timestamped_pose_with_time(current_timestamp, current_local_pose);
             }
         }
-
+        
         // for debug
         pcl::PointXYZ point;
         Eigen::Affine3f global_pose = current_global_transform * current_local_pose;
@@ -217,7 +217,7 @@ void Tick()
             spdlog::info("new localslam session");
 
             // for debug
-            std::string filename_pose = "/home/haochen/dconstruct/dash_robot/build/dash_code/pointcloud_utils/localSlam/test/map/pose_data.pcd";
+            std::string filename_pose = "/home/haochen/dconstruct/kiss_icp/result_folder/pose_data.pcd";
             pcl::io::savePCDFileBinaryCompressed(filename_pose, *pose_list);
 
             // Get current map and transform to world frame
@@ -250,9 +250,10 @@ void Tick()
                 overgrown_points = _overgrowth_ptr->getOvergrownPoints();
                 pcl::transformPointCloud(*overgrown_points, *overgrown_points, current_global_transform);
                 spdlog::warn("Overgrown detected with size {}", overgrown_points->size());
-                pcl::io::savePCDFileBinaryCompressed("/home/haochen/dconstruct/dash_robot/build/dash_code/pointcloud_utils/localSlam/test/map/overgrown_points" + std::to_string(updated_lidar_timestamp) + ".pcd", *overgrown_points);
+                pcl::io::savePCDFileBinaryCompressed("/home/haochen/dconstruct/kiss_icp/result_folder/overgrown_points" + std::to_string(updated_lidar_timestamp) + ".pcd", *overgrown_points);
                 // overgrown_start_timestamp = _overgrowth_ptr->getOvergrownStartTimestamp();
                 // overgrown_end_timestamp = _overgrowth_ptr->getOvergrownEndTimestamp();
+                
             }
 
             // reset slam
