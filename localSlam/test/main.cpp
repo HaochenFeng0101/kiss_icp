@@ -144,6 +144,8 @@ void Tick(const ros::Publisher& pub_path_pcd,const ros::Publisher& pub_map, cons
             spdlog::info("new slam");
             
             
+            
+            
         }
         
 
@@ -240,7 +242,7 @@ void Tick(const ros::Publisher& pub_path_pcd,const ros::Publisher& pub_map, cons
             pcl::PointCloud<pcl::PointXYZ>::Ptr local_map = _localSlam.getLocalMap();
             // pcl::transformPointCloud(*local_map, *local_map, current_global_transform);
             // pcl::io::savePCDFileBinaryCompressed("/home/haochen/dconstruct/dash_robot/build/dash_code/pointcloud_utils/localSlam/test/map/localmap" + std::to_string(updated_lidar_timestamp) + ".pcd", *local_map);
-
+            
 
             // update local map
             _overgrowth_ptr->updateMap(local_map);
